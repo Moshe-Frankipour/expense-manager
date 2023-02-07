@@ -26,7 +26,8 @@ export default function NewExpenses(props) {
       <AlertMsg show={showMsg} />
 
       <button className="button-style" onClick={handleClickOpen}>
-        Add New Expenses
+        <div className="plus-icon"></div>
+        Add New Expense
       </button>
       <ExpenseDialog
         onUpdateExpense={props.onUpdateExpense}
