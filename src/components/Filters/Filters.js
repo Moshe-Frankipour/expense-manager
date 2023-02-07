@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Button, ButtonGroup, FormControl, FormControlLabel, InputLabel, MenuItem, Select } from "@mui/material";
+import { Button, ButtonGroup, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import Storage from "../../utils/Storage";
-import dayjs from 'dayjs';
 import "./Filters.css"; 
 
 const clear = async(onUpdateExpense, setValue) => {
@@ -56,7 +55,7 @@ function Filters(props) {
                     }}
                 >
                     <MenuItem value="-1">Empty</MenuItem>
-                    {YEARS.map((x)=> <MenuItem value={x}>{x}</MenuItem>)}
+                    {YEARS.map((x)=> <MenuItem value={x} key={x}>{x}</MenuItem>)}
                 </Select>
             </FormControl>
             <FormControl>
@@ -71,7 +70,7 @@ function Filters(props) {
                     }}
                 >
                     <MenuItem value="-1">Empty</MenuItem>
-                    {MONTHS.map((x, index)=> <MenuItem value={index}>{x}</MenuItem>)}
+                    {MONTHS.map((x, index)=> <MenuItem value={index} key={x}>{x}</MenuItem>)}
                 </Select>
             </FormControl>
             <ButtonGroup variant="outlined" aria-label="outlined button group">
